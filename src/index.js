@@ -2,6 +2,7 @@ import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
+
 const API_KEY = '37968354-d4f7c033d18c1ecfffc2ea2ca';
 const BASE_URL = 'https://pixabay.com/api/';
 
@@ -141,8 +142,10 @@ function clearGallery() {
 function checkLoadMoreButton() {
   if (gallery.children.length >= totalHits) {
     loadMoreBtn.style.display = 'none';
+    showMessage("We're sorry, but you've reached the end of search results.");
   } else {
     loadMoreBtn.style.display = 'block';
+    messageElement.style.display = 'none';
   }
 }
 
